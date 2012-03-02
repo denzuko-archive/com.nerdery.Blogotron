@@ -19,6 +19,14 @@ This application will be tracking our progress through Rails training.  Pretty s
 13. Run `bundle install` to setup all the gems
 14. Tada!  Run `rails server` and get to coding!
 
+=== Troubleshooting OSX
+If `rvm install 1.9.2` results in the error message "The provided compiler '/usr/bin/gcc' is LLVM based, it is not yet fully supported by ruby and gems, please read `rvm requirements`.", first ensure that you followed step 1 above. If the error still occurs, type the following at a command prompt:
+
+export CC=/usr/bin/gcc-4.2
+rvm install 1.9.2
+
+This will force rvm to use the correct version of GCC, and should allow you to install Ruby successfully. 
+
 == Getting Started on Linux
 1. Install build-essentials (usually `sudo apt-get install build-essentials`)
 2. Install rvm from http://beginrescueend.com/

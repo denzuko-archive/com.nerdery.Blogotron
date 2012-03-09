@@ -54,3 +54,32 @@ This will force rvm to use the correct version of GCC, and should allow you to i
 8. Switch to that branch using `git checkout johns_training`
 9. Run `bundle install` to setup all the gems
 10. Tada!  Run `rails server` and get to coding!
+
+== Module 2!!  Building Your First Object
+1. rails generate resource Article
+2. Edit db/migrate/CreateArticle to include:
+
+	class CreateArticles < ActiveRecord::Migration
+		def change
+			create_table :articles do |t|
+				t.string :content
+				t.string :title
+
+				t.timestamps
+			end
+		end
+	end
+3. Add some gems to Gemfile to make our lives easier:
+	
+	gem 'inherited_resources'
+	gem 'simple_form'
+
+4. Update ~/app/controllers/articles_controller.rb to inherit from InheritedResources 
+	
+	class ArticlesController < InheritedResources::Base
+		...
+	end
+5. Generate some basic views!
+	
+	Steal these from https://github.com/jordantcox/com.phantomdata.BillMinder and update to meet your needs.
+	

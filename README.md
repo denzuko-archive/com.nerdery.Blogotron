@@ -59,8 +59,8 @@ Getting Started on Windows
 
 Module 2 - Building Your First Object
 =====================================
-1. Copy config/database.yml.skel to config/database.yml
-2. rails generate resource Article
+1. Copy config/database.yml.skel to config/database.yml with `cp config/database.yml.skel config/database.yml`
+2. Run `rails generate resource Article` to generate our article resource.
 3. Edit db/migrate/CreateArticle to include:
 
 		class CreateArticles < ActiveRecord::Migration
@@ -88,3 +88,6 @@ Module 2 - Building Your First Object
 			<h1><%= article.title %></h1>
 			<p><%= article.content %></p>
 		<% end %>
+6. Fire up your rails console by typing `rails console` anywhere in the project directory.
+7. Manually insert a new article into the database by typing `Article.create :title => "Test Article", :content => "Oh my god here is some test content"`.  This will create and save a new Article object into your database.  See all that stuff that Rails spat out?  That's the SQL that ActiveRecord is running for you.
+8. Go to http://localhost:3000/articles and you should now see your brand spanking new article!  Huzzah!

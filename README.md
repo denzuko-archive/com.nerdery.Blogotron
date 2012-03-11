@@ -63,16 +63,16 @@ Module 2 - Building Your First Object
 2. rails generate resource Article
 3. Edit db/migrate/CreateArticle to include:
 
-	class CreateArticles < ActiveRecord::Migration
-		def change
-			create_table :articles do |t|
-				t.string :content
-				t.string :title
+		class CreateArticles < ActiveRecord::Migration
+			def change
+				create_table :articles do |t|
+					t.string :content
+					t.string :title
 
-				t.timestamps
+					t.timestamps
+				end
 			end
 		end
-	end
 
 4. Update app/controllers/articles_controller.rb to have an index action that will grab all articles from the database:
 

@@ -76,15 +76,15 @@ Module 2 - Building Your First Object
 
 4. Update app/controllers/articles_controller.rb to have an index action that will grab all articles from the database:
 
-	class ArticlesController < ApplicationController
-		def index
-			@articles = Article.all
+		class ArticlesController < ApplicationController
+			def index
+				@articles = Article.all
+			end
 		end
-	end
 
 5. Create a basic app/views/articles/index.html.erb to render out our articles:
 
-	<% @articles.each do |article| %>
-		<h1><%= article.title %></h1>
-		<p><%= article.content %></p>
-	<% end %>
+		<% @articles.each do |article| %>
+			<h1><%= article.title %></h1>
+			<p><%= article.content %></p>
+		<% end %>

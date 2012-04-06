@@ -1,0 +1,4 @@
+<h1>Creating a New Article</h1>
+<%= simple_form_for(@article, :url => collection_url, :html => { :class => "well" }) do |f| %>
+	<%= render :partial => "form", :locals => { :f => f } %>
+<% end %>
